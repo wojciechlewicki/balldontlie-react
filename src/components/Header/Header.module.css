@@ -1,0 +1,46 @@
+.header {
+  margin-top: 30px;
+  align-items: center;
+  padding: 0 60px;
+}
+
+.header nav,
+.header ul {
+  display: flex;
+}
+
+.header nav {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.header li, .header .input-div {
+  margin-left: 50px;
+}
+
+.header .input-div {
+  display: flex;
+  height: 40px;
+  width: 40%;
+  padding: 0 5px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-weight: 500;
+}
+
+.header input:focus {
+  color: #25313c;
+}
+
+.flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #ee1b3f;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
