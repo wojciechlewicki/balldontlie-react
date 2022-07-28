@@ -1,5 +1,6 @@
 .header {
   margin-top: 30px;
+  margin-bottom: 50px;
   align-items: center;
   padding: 0 60px;
 }
@@ -12,6 +13,10 @@
 .header nav {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.header li {
+  display: inline-block;
 }
 
 .header li, .header .input-div {

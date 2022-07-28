@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home";
 import Players from "./pages/Players";
@@ -20,6 +21,7 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/*" element={<NotFound404 />} />
       </Routes>
+      <Footer />
     </Fragment>
   );
 }
