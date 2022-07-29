@@ -22,9 +22,20 @@ input {
   background-color: transparent;
   resize: none;
   outline: none;
-  color: #142D61 !important;
+  color: #142d61 !important;
 }
 
-input::placeholder{
-  color: #BBC8D4;
+input::placeholder {
+  color: #bbc8d4;
+}
+
+.main {
+  overflow: hidden;
+  margin: 0 auto 90px auto;
+}
+
+header,
+.outer-wrapper,
+footer {
+  padding: 0 60px;
 }
