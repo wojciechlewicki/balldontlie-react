@@ -18,8 +18,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/players" element={<Players />} />
-          <Route path="/players?page=:page" element={<Players />} />
-          <Route path="/players?page=:page&per_page=:per_page" element={<Players />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/games" element={<Games />} />
           <Route path="/*" element={<NotFound404 />} />

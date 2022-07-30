@@ -15,14 +15,12 @@ body {
   font-family: "Mulish", sans-serif;
 }
 
-input {
+input, select, option {
   height: auto;
-  width: 100%;
   border: none;
-  background-color: transparent;
   resize: none;
   outline: none;
-  color: #142d61 !important;
+  color: black;
 }
 
 input::placeholder {
@@ -38,4 +36,10 @@ header,
 .outer-wrapper,
 footer {
   padding: 0 60px;
+}
+
+.flexbox-row-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

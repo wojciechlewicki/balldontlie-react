@@ -4,6 +4,7 @@
 
 .data-table th {
     text-align: left;
+    line-height: 250%;
 }
 
 .data-table td {

@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 100%;
+  height: 35px;
+}
+
+.navigation select
+.navigation option,
+.navigation button,
+.navigation input {
+  width: 50px;
+  height: 30px;
+}
+
+.navigation select {
+  margin-left: 10px;
+  height: 80%;
+}
+
+.navigation button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 20px;
+}

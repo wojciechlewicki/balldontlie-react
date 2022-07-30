@@ -18,7 +18,8 @@
   display: inline-block;
 }
 
-.header li, .header .input-div {
+.header li,
+.header .input-div {
   margin-left: 50px;
 }
 
@@ -30,6 +31,11 @@
   border-radius: 4px;
   background-color: #fff;
   font-weight: 500;
+}
+
+.input-div input {
+  width: 100%;
+  color: #142d61 !important;
 }
 
 .header input:focus {
