@@ -34,7 +34,7 @@ const Players = () => {
   };
 
   if (isLoading || playersList === null) {
-    return <div>Loading...</div>;
+    return <div className="centered">Loading...</div>;
   }
 
   if (error) {

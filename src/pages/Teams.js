@@ -34,7 +34,7 @@ const Teams = () => {
   };
 
   if (isLoading || teamsList === null) {
-    return <div>Loading...</div>;
+    return <div className="centered">Loading...</div>;
   }
 
   if (error) {
