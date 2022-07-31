@@ -10,12 +10,26 @@
   padding: 0;
 }
 
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 body {
   background-color: #1d418b;
   font-family: "Mulish", sans-serif;
 }
 
-input, select, option {
+input,
+select,
+option {
   height: auto;
   border: none;
   resize: none;
@@ -29,7 +43,7 @@ input::placeholder {
 
 .main {
   overflow: hidden;
-  margin: 0 auto 90px auto;
+  margin-bottom: 90px;
 }
 
 header,

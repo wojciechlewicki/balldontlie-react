@@ -11,7 +11,9 @@ import DataTableNavigation from "../components/DataTable/DataTableNavigation";
 const Players = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const page = +searchParams.get("page");
-  const per_page = +searchParams.get("per_page") ? +searchParams.get("per_page") : 20;
+  const per_page = +searchParams.get("per_page")
+    ? +searchParams.get("per_page")
+    : 20;
 
   const {
     sendRequest,
@@ -41,6 +43,7 @@ const Players = () => {
   const { players, meta } = playersList;
 
   const handleBack = () => {
+    console.log(page);
     if (page > 1) {
       const paramsObj = {
         page: page - 1,
@@ -58,6 +61,9 @@ const Players = () => {
       const paramsObj = {
         page: page + 1,
       };
+      if (page === 0) {
+        paramsObj.page++;
+      }
       if (per_page !== 20) {
         paramsObj.per_page = per_page;
       }
