@@ -24,14 +24,7 @@ const Players = () => {
 
   useEffect(() => {
     sendRequest(page ? page : 1, per_page);
-
-    console.log(page, per_page);
   }, [sendRequest, page, per_page]);
-
-  const handlePerPageChange = (event) => {
-    const per_page = event.target.value;
-    setSearchParams({ per_page: per_page });
-  };
 
   if (isLoading || playersList === null) {
     return <div className="centered">Loading...</div>;
@@ -41,36 +34,6 @@ const Players = () => {
     return <div>{error}</div>;
   }
   const { players, meta } = playersList;
-
-  const handleBack = () => {
-    console.log(page);
-    if (page > 1) {
-      const paramsObj = {
-        page: page - 1,
-      };
-      if (per_page !== 20) {
-        paramsObj.per_page = per_page;
-      }
-
-      setSearchParams(paramsObj);
-    }
-  };
-
-  const handleForward = () => {
-    if (page < meta.total_pages) {
-      const paramsObj = {
-        page: page + 1,
-      };
-      if (page === 0) {
-        paramsObj.page++;
-      }
-      if (per_page !== 20) {
-        paramsObj.per_page = per_page;
-      }
-
-      setSearchParams(paramsObj);
-    }
-  };
 
   const tableHeader = (
     <tr>
@@ -88,7 +51,7 @@ const Players = () => {
       <tr key={player.id}>
         <td>{player.first_name}</td>
         <td>{player.last_name}</td>
-        <td>{player.position}</td>
+        <td>{player.position ? `${player.position}'` : "unknown"}</td>
         <td>
           {player.height_feet ? `${player.height_feet}'` : "unknown"}
           {player.height_inches ? ` ${player.height_inches}''` : ""}
@@ -107,9 +70,7 @@ const Players = () => {
           currentPage={meta.current_page}
           numberOfPages={meta.total_pages}
           perPage={per_page}
-          handlePerPageChange={handlePerPageChange}
-          handleBack={handleBack}
-          handleForward={handleForward}
+          setSearchParams={setSearchParams}
         />
       </Wrapper>
     </div>
