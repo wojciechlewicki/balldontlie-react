@@ -6,7 +6,7 @@ import { getAllTeams } from "../services/api";
 
 import Wrapper from "../components/ui/Wrapper";
 import DataTable from "../components/DataTable/DataTable";
-import DataTableNavigation from "../components/DataTable/DataTableNavigation";
+import Navigation from "../components/DataTable/Navigation";
 
 const Teams = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -63,11 +63,11 @@ const Teams = () => {
   return (
     <div className="outer-wrapper">
       <Wrapper>
+        <h1>Teams</h1>
         <DataTable head={tableHeader} body={teamsRows} />
-        <DataTableNavigation
-          currentPage={meta.current_page}
+        <Navigation
           numberOfPages={meta.total_pages}
-          perPage={per_page}
+          searchParams={searchParams}
           setSearchParams={setSearchParams}
         />
       </Wrapper>

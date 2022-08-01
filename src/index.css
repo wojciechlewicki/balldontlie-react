@@ -52,6 +52,11 @@ footer {
   padding: 0 60px;
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
 .flexbox-row-center {
   display: flex;
   align-items: center;

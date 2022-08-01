@@ -1,0 +1,22 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.postseason select {
+  margin-left: 0.5rem;
+}
+
+.date-range {
+  display: flex;
+}
+
+.date-range input {
+  margin-left: 0.5rem;
+}
+
+.date-range label {
+  margin-left: 1.5rem;
+}

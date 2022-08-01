@@ -5,8 +5,9 @@ import useFetch from "../hooks/useFetch";
 import { getAllGames } from "../services/api";
 
 import Wrapper from "../components/ui/Wrapper";
+import Filters from "../components/DataTable/Filters";
 import DataTable from "../components/DataTable/DataTable";
-import DataTableNavigation from "../components/DataTable/DataTableNavigation";
+import Navigation from "../components/DataTable/Navigation";
 
 const Games = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -14,6 +15,9 @@ const Games = () => {
   const per_page = +searchParams.get("per_page")
     ? +searchParams.get("per_page")
     : 20;
+  const postseason = searchParams.get("postseason");
+  const start_date = searchParams.get("start_date");
+  const end_date = searchParams.get("end_date");
 
   const {
     sendRequest,
@@ -23,9 +27,8 @@ const Games = () => {
   } = useFetch(getAllGames);
 
   useEffect(() => {
-    sendRequest(page, per_page);
-    // sendRequest(page, per_page, { seasons: [2021] });
-  }, [sendRequest, page, per_page]);
+    sendRequest(page, per_page, { start_date, end_date, postseason });
+  }, [sendRequest, page, per_page, start_date, end_date, postseason]);
 
   if (isLoading || gamesList === null) {
     return <div className="centered">Loading...</div>;
@@ -56,7 +59,9 @@ const Games = () => {
     return (
       <tr key={game.id}>
         <td>{game.home_team.full_name}</td>
-        <td>{game.home_team_score} : {game.visitor_team_score}</td>
+        <td>
+          {game.home_team_score} : {game.visitor_team_score}
+        </td>
         <td>{game.visitor_team.full_name}</td>
         <td>{`${year} - ${month} - ${day}`}</td>
         <td>{game.status}</td>
@@ -68,11 +73,15 @@ const Games = () => {
   return (
     <div className="outer-wrapper">
       <Wrapper>
+        <h1>Games</h1>
+        <Filters
+          searchParams={searchParams}
+          setSearchParams={setSearchParams}
+        />
         <DataTable head={tableHeader} body={gamesRows} />
-        <DataTableNavigation
-          currentPage={meta.current_page}
+        <Navigation
           numberOfPages={meta.total_pages}
-          perPage={per_page}
+          searchParams={searchParams}
           setSearchParams={setSearchParams}
         />
       </Wrapper>
