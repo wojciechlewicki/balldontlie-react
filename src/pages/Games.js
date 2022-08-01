@@ -39,8 +39,7 @@ const Games = () => {
   const tableHeader = (
     <tr>
       <th>Home team</th>
-      <th></th>
-      <th></th>
+      <th>Score</th>
       <th>Visitor team</th>
       <th>Date (YYYY - MM - DD)</th>
       <th>Status</th>
@@ -56,10 +55,9 @@ const Games = () => {
 
     return (
       <tr key={game.id}>
-        <td>{game.home_team.abbreviation}</td>
-        <td>{game.home_team_score}</td>
-        <td>{game.visitor_team_score}</td>
-        <td>{game.visitor_team.abbreviation}</td>
+        <td>{game.home_team.full_name}</td>
+        <td>{game.home_team_score} : {game.visitor_team_score}</td>
+        <td>{game.visitor_team.full_name}</td>
         <td>{`${year} - ${month} - ${day}`}</td>
         <td>{game.status}</td>
         <td>{game.time.trim() !== "" ? game.time : "-"}</td>
