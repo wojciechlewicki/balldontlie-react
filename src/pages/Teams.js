@@ -24,8 +24,6 @@ const Teams = () => {
 
   useEffect(() => {
     sendRequest(page ? page : 1, per_page);
-
-    console.log(page, per_page);
   }, [sendRequest, page, per_page]);
 
 

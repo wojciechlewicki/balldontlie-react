@@ -1,12 +1,14 @@
 .data-table {
-    width: 100%;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .data-table th {
-    text-align: left;
-    line-height: 250%;
+  text-align: left;
+  line-height: 250%;
 }
 
-.data-table td {
-    line-height: 175%;
+.data-table tr {
+  border-bottom: 1px solid white;
+  line-height: 220%;
 }

@@ -46,7 +46,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
 
   let postSeasonSelectValue;
   if (postseason === "false") postSeasonSelectValue = "season";
-  else if (postseason === "true") postSeasonSelectValue = "postseason"
+  else if (postseason === "true") postSeasonSelectValue = "postseason";
   else postSeasonSelectValue = "all_games";
 
   return (

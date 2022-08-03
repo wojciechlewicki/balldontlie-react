@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 
 import useFetch from "../hooks/useFetch";
 import { getAllPlayers } from "../services/api";
@@ -41,8 +41,9 @@ const Players = () => {
       <th>Last name</th>
       <th>Position</th>
       <th>Height</th>
-      <th>Weight (Pounds)</th>
+      <th>Weight (Lb)</th>
       <th>Team</th>
+      <th>Details</th>
     </tr>
   );
 
@@ -54,10 +55,11 @@ const Players = () => {
         <td>{player.position ? `${player.position}'` : "unknown"}</td>
         <td>
           {player.height_feet ? `${player.height_feet}'` : "unknown"}
-          {player.height_inches ? ` ${player.height_inches}''` : ""}
+          {player.height_inches === null ? "" : ` ${player.height_inches}''`}
         </td>
         <td>{player.weight_pounds ? player.weight_pounds : "unknown"}</td>
         <td>{player.team.full_name}</td>
+        <td><Link to={`/players/${player.id}`}>Show</Link></td>
       </tr>
     );
   });

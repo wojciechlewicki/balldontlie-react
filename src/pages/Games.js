@@ -53,8 +53,8 @@ const Games = () => {
   const gamesRows = games.map((game) => {
     const date = new Date(game.date);
     const year = date.getFullYear();
-    const month = date.getMonth() > 9 ? date.getMonth() : "0" + date.getMonth();
-    const day = date.getDay() > 9 ? date.getDay() : "0" + date.getDay();
+    const month = date.getMonth() + 1 > 9 ? date.getMonth() + 1 : "0" + (date.getMonth() + 1);
+    const day = date.getDay() + 1 > 9 ? date.getDay() + 1 : "0" + (date.getDay() + 1);
 
     return (
       <tr key={game.id}>

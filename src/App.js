@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 
 import Home from "./pages/Home";
 import Players from "./pages/Players";
+import Player from "./pages/Player";
 import Teams from "./pages/Teams";
 import Games from "./pages/Games";
 import NotFound404 from "./pages/NotFound404";
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/players" element={<Players />} />
+          <Route path="/players/:playerId" element={<Player />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/games" element={<Games />} />
           <Route path="/*" element={<NotFound404 />} />
