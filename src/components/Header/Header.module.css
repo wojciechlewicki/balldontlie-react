@@ -1,6 +1,6 @@
 .header {
-  padding-top: 30px;
-  margin-bottom: 50px;
+  padding-top: 2rem;
+  margin-bottom: 3rem;
   align-items: center;
 }
 
@@ -20,12 +20,12 @@
 
 .header li,
 .header .input-div {
-  margin-left: 50px;
+  margin-left: 2.5em;
 }
 
 .header .input-div {
   display: flex;
-  height: 40px;
+  height: 2.5rem;
   width: 40%;
   padding: 0 5px;
   border-radius: 4px;
@@ -44,6 +44,7 @@
 
 .flexbox {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: space-between;
 }
@@ -51,6 +52,72 @@
 .logo {
   color: #ee1b3f;
   font-family: "Titillium Web", sans-serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  fill: white;
+  background-color: transparent;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .header nav {
+    display: none;
+  }
+
+  .header nav.show {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header .input-div {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  .header ul {
+    flex-direction: column;
+  }
+
+  .header li {
+    line-height: 300%;
+    margin-left: 0px;
+  }
+
+  .header nav {
+    position: absolute;
+    background-color: #1d418b;
+    padding: 1rem 2rem;
+    top: 100%;
+    right: calc(0% - 30px);
+  }
+}
+
+@media (max-width: 425px) {
+  .header nav {
+    right: calc(0% - 20px);
+  }
+}
+
+@media (max-width: 320px) {
+  .header nav {
+    right: calc(0% - 15px);
+  }
 }

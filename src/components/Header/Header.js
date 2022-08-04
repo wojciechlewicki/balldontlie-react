@@ -2,11 +2,17 @@ import { useState } from "react";
 import Wrapper from "../ui/Wrapper";
 import { NavLink, useNavigate, createSearchParams } from "react-router-dom";
 
+import {ReactComponent as HamburgerIcon} from "../../assets/hamburger-menu-icon.svg"
 import classes from "./Header.module.css";
 
 const Header = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const handleToogleNav = () => {
+    setNavbarOpen(prev => !prev)
+  }
 
   const handleChange = (event) => {
     setSearch(event.target.value);
@@ -20,8 +26,7 @@ const Header = () => {
 
   return (
     <header className={classes.header}>
-      <Wrapper>
-        <div className={classes.flexbox}>
+      <Wrapper className={classes.flexbox}>
           <NavLink className={classes.logo} to="/">
             NBAdata
           </NavLink>
@@ -33,7 +38,8 @@ const Header = () => {
               onChange={handleChange}
             ></input>
           </form>
-          <nav>
+            <button className={classes.hamburger} onClick={handleToogleNav}><HamburgerIcon /></button>
+          <nav className={navbarOpen ? classes.show : ""}>
             <ul>
               <li>
                 <NavLink to="/players">Players</NavLink>
@@ -46,7 +52,6 @@ const Header = () => {
               </li>
             </ul>
           </nav>
-        </div>
       </Wrapper>
     </header>
   );
