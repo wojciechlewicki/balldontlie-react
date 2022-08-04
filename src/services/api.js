@@ -3,13 +3,14 @@ import searchParamsParser from "../utils/searchParamsParser";
 export const BASE_URL = "https://www.balldontlie.io/api/v1";
 
 export async function getSeasonAverages(id, season = "current") {
-
   let seasonParam = "";
-  if(season !== "current") {
+  if (season !== "current") {
     seasonParam = `season=${season}&`;
   }
 
-  const response = await fetch(`${BASE_URL}/season_averages?${seasonParam}player_ids[]=${id}`);
+  const response = await fetch(
+    `${BASE_URL}/season_averages?${seasonParam}player_ids[]=${id}`
+  );
   const data = await response.json();
 
   if (!response.ok) {
@@ -28,6 +29,19 @@ export async function getPlayer(id) {
   }
 
   return data;
+}
+
+export async function playerSearch(name, page = 1, perPage = 20) {
+  const response = await fetch(
+    `${BASE_URL}/players?search=${name}&page=${page}&per_page=${perPage}`
+  );
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.message || "Fetching search results has failed!");
+  }
+
+  return { players: data.data, meta: data.meta };
 }
 
 export async function getAllPlayers(page = 1, perPage = 20) {
@@ -71,4 +85,3 @@ export async function getAllGames(page = 1, perPage = 20, params = {}) {
 
   return { games: data.data, meta: data.meta };
 }
-

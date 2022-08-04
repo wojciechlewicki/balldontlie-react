@@ -1,9 +1,23 @@
+import { useState } from "react";
 import Wrapper from "../ui/Wrapper";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, createSearchParams } from "react-router-dom";
 
 import classes from "./Header.module.css";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const params = { string: search };
+    navigate({ pathname: "/playersearch", search: `?${createSearchParams(params)}` });
+  };
+
   return (
     <header className={classes.header}>
       <Wrapper>
@@ -11,9 +25,14 @@ const Header = () => {
           <NavLink className={classes.logo} to="/">
             NBAdata
           </NavLink>
-          <div className={classes['input-div']}>
-            <input type="text" placeholder="Search for players..."></input>
-          </div>
+          <form className={classes["input-div"]} onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Search for players..."
+              value={search}
+              onChange={handleChange}
+            ></input>
+          </form>
           <nav>
             <ul>
               <li>
