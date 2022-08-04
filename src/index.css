@@ -63,6 +63,15 @@ h1 {
   justify-content: space-between;
 }
 
+.flexbox-row-space-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem 0;
+  font-size: 1.25rem;
+}
+
+
 .centered {
   position: absolute;
   left: 50%;

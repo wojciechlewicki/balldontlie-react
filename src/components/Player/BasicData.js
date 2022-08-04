@@ -1,12 +1,13 @@
 import Card from "../ui/Card";
+import classes from "./BasicData.module.css";
 
 const BasicData = ({ playerData }) => {
   return (
-    <Card className="flexbox-row-center">
+    <Card className="flexbox-row-space-around">
       <div>
         <h2>{playerData.first_name}</h2>
-        <h2>{playerData.last_name}</h2>
-        <table>
+        <h2 className={classes.headers}>{playerData.last_name}</h2>
+        <table className={classes["basic-data"]}>
           <tbody>
             <tr>
               <th>Position</th>
@@ -35,8 +36,8 @@ const BasicData = ({ playerData }) => {
         </table>
       </div>
       <div>
-        <h2>Team</h2>
-        <table>
+        <h2 className={classes.headers}>Team</h2>
+        <table className={classes["basic-data"]}>
           <tbody>
             <tr>
               <th>Abbreviation</th>

@@ -1,0 +1,23 @@
+.season-averages {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.15rem;
+}
+
+.season-averages tr {
+  line-height: 175%;
+}
+
+.season-averages th {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.season-select {
+  display: flex;
+  align-items: center;
+}
+
+.season-select label {
+  padding-right: 0.5em;
+}

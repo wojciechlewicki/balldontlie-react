@@ -1,0 +1,13 @@
+.basic-data {
+  font-size: 1.25rem;
+  line-height: 150%;
+}
+
+.basic-data th {
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.headers {
+  padding-bottom: 1.5em;
+}

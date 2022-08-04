@@ -1,11 +1,11 @@
 import { Fragment, useEffect } from "react";
 
-import Card from "../ui/Card";
-
 import useFetch from "../../hooks/useFetch";
 import { getSeasonAverages } from "../../services/api";
 
 import generateArrayOfYears from "../../utils/generateArrayOfYears";
+import Card from "../ui/Card";
+import classes from "./SeasonAverages.module.css";
 
 const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
   let content;
@@ -44,14 +44,10 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
   };
 
   if (seasonAverages.length === 0) {
-    content = (
-      <Card>
-        <p>There's no player statistics for the chosen season.</p>
-      </Card>
-    );
+    content = <p>There's no player statistics for the chosen season.</p>;
   } else {
     content = (
-      <Card className="flexbox-row-center">
+      <Fragment>
         <table>
           <tbody>
             <tr>
@@ -100,7 +96,7 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
             </tr>
           </tbody>
         </table>
-        <table>
+        <table className={classes["season-averages"]}>
           <tbody>
             <tr>
               <th>Personal Fauls</th>
@@ -144,22 +140,26 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
             </tr>
           </tbody>
         </table>
-      </Card>
+      </Fragment>
     );
   }
 
   return (
     <Fragment>
-      <p>Season averages</p>
-      <label htmlFor="season-select">Select season</label>
-      <select
-        id="season-select"
-        onChange={handleSelectYear}
-        defaultValue={chosenYear}
-      >
-        {selectOptions}
-      </select>
-      {content}
+      <div className="flexbox-row-space-around">
+        <p>Season averages</p>
+        <div className={classes['season-select']}>
+          <label htmlFor="season-select">Select season</label>
+          <select
+            id="season-select"
+            onChange={handleSelectYear}
+            defaultValue={chosenYear}
+          >
+            {selectOptions}
+          </select>
+        </div>
+      </div>
+      <Card className={classes["season-averages"]}>{content}</Card>
     </Fragment>
   );
 };
