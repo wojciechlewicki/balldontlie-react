@@ -96,7 +96,7 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
             </tr>
           </tbody>
         </table>
-        <table className={classes["season-averages"]}>
+        <table>
           <tbody>
             <tr>
               <th>Personal Fauls</th>

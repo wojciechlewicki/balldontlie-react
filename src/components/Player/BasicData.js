@@ -3,11 +3,11 @@ import classes from "./BasicData.module.css";
 
 const BasicData = ({ playerData }) => {
   return (
-    <Card className="flexbox-row-space-around">
-      <div>
+    <Card className={classes["basic-data__card"]}>
+      <div className={classes["basic-data__data"]}>
         <h2>{playerData.first_name}</h2>
         <h2 className={classes.headers}>{playerData.last_name}</h2>
-        <table className={classes["basic-data"]}>
+        <table>
           <tbody>
             <tr>
               <th>Position</th>
@@ -35,9 +35,9 @@ const BasicData = ({ playerData }) => {
           </tbody>
         </table>
       </div>
-      <div>
+      <div className={classes["basic-data__data"]}>
         <h2 className={classes.headers}>Team</h2>
-        <table className={classes["basic-data"]}>
+        <table>
           <tbody>
             <tr>
               <th>Abbreviation</th>

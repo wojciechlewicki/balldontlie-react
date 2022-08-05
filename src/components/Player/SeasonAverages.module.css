@@ -1,16 +1,23 @@
 .season-averages {
   display: flex;
-  justify-content: space-around;
   font-size: 1.15rem;
 }
 
+.season-averages table {
+  border-collapse: collapse;
+  flex-grow: 1;
+  margin-right: 1em;
+}
+
 .season-averages tr {
+  display: flex;
+  justify-content: space-between;
   line-height: 175%;
+  border-bottom: 1px solid white;
 }
 
 .season-averages th {
   text-align: left;
-  padding-right: 2rem;
 }
 
 .season-select {
@@ -20,4 +27,19 @@
 
 .season-select label {
   padding-right: 0.5em;
+}
+
+@media(max-width: 768px) {
+  .season-averages {
+    flex-direction: column;
+  }
+
+  .season-averages table {
+    margin: 0;
+  }
+
+  .season-averages tr {
+    display: flex;
+    justify-content: space-between;
+  }
 }
