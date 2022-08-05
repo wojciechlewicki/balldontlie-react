@@ -38,9 +38,9 @@ const Teams = () => {
 
   const tableHeader = (
     <tr>
-      <th>Abbreviation</th>
+      <th>Abbrev.</th>
       <th>Full name</th>
-      <th>Conference</th>
+      <th>Con.</th>
       <th>Division</th>
       <th>City</th>
     </tr>

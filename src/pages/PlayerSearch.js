@@ -40,9 +40,9 @@ const PlayerSearch = () => {
     <tr>
       <th>First name</th>
       <th>Last name</th>
-      <th>Position</th>
+      <th>Pos.</th>
       <th>Height</th>
-      <th>Weight (Lb)</th>
+      <th>Weight(Lb)</th>
       <th>Team</th>
       <th>Details</th>
     </tr>
@@ -53,13 +53,13 @@ const PlayerSearch = () => {
       <tr key={player.id}>
         <td>{player.first_name}</td>
         <td>{player.last_name}</td>
-        <td>{player.position ? `${player.position}'` : "unknown"}</td>
+        <td>{player.position ? `${player.position}'` : "unk"}</td>
         <td>
-          {player.height_feet ? `${player.height_feet}'` : "unknown"}
+          {player.height_feet ? `${player.height_feet}'` : "unk"}
           {player.height_inches === null ? "" : ` ${player.height_inches}''`}
         </td>
-        <td>{player.weight_pounds ? player.weight_pounds : "unknown"}</td>
-        <td>{player.team.full_name}</td>
+        <td>{player.weight_pounds ? player.weight_pounds : "unk"}</td>
+        <td>{player.team.abbreviation}</td>
         <td>
           <Link to={`/players/${player.id}`}>Show</Link>
         </td>

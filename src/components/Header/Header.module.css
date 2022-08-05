@@ -61,6 +61,7 @@
   fill: white;
   background-color: transparent;
   border: none;
+  padding-top: 0.2em;
   width: 2rem;
   height: 2rem;
 }

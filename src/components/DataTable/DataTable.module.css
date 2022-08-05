@@ -12,3 +12,9 @@
   border-bottom: 1px solid white;
   line-height: 220%;
 }
+
+@media (max-width: 768px) {
+  .data-table {
+    font-size: 0.75rem;
+  }
+}
