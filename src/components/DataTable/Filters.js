@@ -71,7 +71,8 @@ const Filters = ({ searchParams, setSearchParams }) => {
           min="1979-01-01"
           defaultValue={startDate}
           onChange={handleStartDateChange}
-        ></input>
+          required
+        />
       </div>
       <div className={styles["label-input-container"]}>
         <label htmlFor="end-date">End date</label>
@@ -81,7 +82,8 @@ const Filters = ({ searchParams, setSearchParams }) => {
           min="1979-01-01"
           defaultValue={endDate}
           onChange={handleEndDateChange}
-        ></input>
+          required
+        />
       </div>
     </div>
   );
