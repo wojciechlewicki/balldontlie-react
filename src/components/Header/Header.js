@@ -42,13 +42,13 @@ const Header = () => {
           <nav className={navbarOpen ? styles.show : ""}>
             <ul>
               <li>
-                <NavLink to="/players">Players</NavLink>
+                <NavLink to="/players" onClick={handleToogleNav}>Players</NavLink>
               </li>
               <li>
-                <NavLink to="/teams">Teams</NavLink>
+                <NavLink to="/teams" onClick={handleToogleNav}>Teams</NavLink>
               </li>
               <li>
-                <NavLink to="/games">Games</NavLink>
+                <NavLink to="/games" onClick={handleToogleNav}>Games</NavLink>
               </li>
             </ul>
           </nav>
