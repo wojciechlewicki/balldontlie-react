@@ -72,6 +72,7 @@ const Games = () => {
     <div className="outer-wrapper">
       <Wrapper>
         <h1>Games</h1>
+        <h2>{meta.total_count} game(s) found</h2>
         <Filters
           searchParams={searchParams}
           setSearchParams={setSearchParams}

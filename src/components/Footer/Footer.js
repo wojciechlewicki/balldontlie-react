@@ -1,10 +1,10 @@
-import classes from "./Footer.module.css";
+import styles from "./Footer.module.css";
 import Wrapper from "../ui/Wrapper";
 
 const Footer = () => {
   return (
-    <footer className={classes.footer}>
-      <Wrapper className={classes.flexbox}>
+    <footer className={styles.footer}>
+      <Wrapper className={styles.flexbox}>
         <p>Copyright 2022 Wojciech Lewicki</p>
       </Wrapper>
     </footer>

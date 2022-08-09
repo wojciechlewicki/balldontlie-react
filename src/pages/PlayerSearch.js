@@ -71,6 +71,7 @@ const PlayerSearch = () => {
     <div className="outer-wrapper">
       <Wrapper>
         <h1>Search results</h1>
+        <h2>{meta.total_count} player(s) found</h2>
         <DataTable head={tableHeader} body={playersRows} />
         <Navigation
           numberOfPages={meta.total_pages}

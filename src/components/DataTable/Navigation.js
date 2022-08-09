@@ -1,4 +1,4 @@
-import classes from "./Navigation.module.css";
+import styles from "./Navigation.module.css";
 
 import { ReactComponent as ArrowBack } from "../../assets/arrow_back.svg";
 import { ReactComponent as ArrowForward } from "../../assets/arrow_forward.svg";
@@ -31,7 +31,7 @@ const Navigation = ({ numberOfPages, searchParams, setSearchParams }) => {
   };
 
   return (
-    <div className={classes.navigation}>
+    <div className={styles.navigation}>
       <div className="flexbox-row-center">
         <label htmlFor="per_page">Rows per page</label>
         <select name="per_page" value={perPage} onChange={handlePerPageChange}>

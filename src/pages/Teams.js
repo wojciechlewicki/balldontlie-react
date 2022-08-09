@@ -26,7 +26,6 @@ const Teams = () => {
     sendRequest(page ? page : 1, per_page);
   }, [sendRequest, page, per_page]);
 
-
   if (isLoading || teamsList === null) {
     return <div className="centered">Loading...</div>;
   }
@@ -62,6 +61,7 @@ const Teams = () => {
     <div className="outer-wrapper">
       <Wrapper>
         <h1>Teams</h1>
+        <h2>{meta.total_count} team(s) found</h2>
         <DataTable head={tableHeader} body={teamsRows} />
         <Navigation
           numberOfPages={meta.total_pages}

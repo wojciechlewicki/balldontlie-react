@@ -1,9 +1,9 @@
-import classes from "./Wrapper.module.css"
+import styles from "./Wrapper.module.css"
 
-const Wrapper = (props) => {
+const Wrapper = ({className, children}) => {
     return (
-        <div className={`${classes.wrapper} ${props.className}`}>
-            {props.children}
+        <div className={`${styles.wrapper} ${className}`}>
+            {children}
         </div>
     )
 }

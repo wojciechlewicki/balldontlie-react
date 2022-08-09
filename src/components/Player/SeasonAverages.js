@@ -5,7 +5,7 @@ import { getSeasonAverages } from "../../services/api";
 
 import generateArrayOfYears from "../../utils/generateArrayOfYears";
 import Card from "../ui/Card";
-import classes from "./SeasonAverages.module.css";
+import styles from "./SeasonAverages.module.css";
 
 const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
   let content;
@@ -148,7 +148,7 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
     <Fragment>
       <div className="flexbox-row-space-around">
         <p>Season averages</p>
-        <div className={classes['season-select']}>
+        <div className={styles['season-select']}>
           <label htmlFor="season-select">Select season</label>
           <select
             id="season-select"
@@ -159,7 +159,7 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
           </select>
         </div>
       </div>
-      <Card className={classes["season-averages"]}>{content}</Card>
+      <Card className={styles["season-averages"]}>{content}</Card>
     </Fragment>
   );
 };

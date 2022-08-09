@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
 import useFetch from "../hooks/useFetch";
 import { getAllPlayers } from "../services/api";
@@ -7,6 +7,7 @@ import { getAllPlayers } from "../services/api";
 import Wrapper from "../components/ui/Wrapper";
 import DataTable from "../components/DataTable/DataTable";
 import Navigation from "../components/DataTable/Navigation";
+import LinkButton from "../components/ui/LinkButton"
 
 const Players = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -59,7 +60,7 @@ const Players = () => {
         </td>
         <td>{player.weight_pounds ? player.weight_pounds : "unk"}</td>
         <td>{player.team.abbreviation}</td>
-        <td><Link to={`/players/${player.id}`}>Show</Link></td>
+        <td><LinkButton to={`/players/${player.id}`}>Show</LinkButton></td>
       </tr>
     );
   });
@@ -68,6 +69,7 @@ const Players = () => {
     <div className="outer-wrapper">
       <Wrapper>
         <h1>Players</h1>
+        <h2>{meta.total_count} player(s) found</h2>
         <DataTable head={tableHeader} body={playersRows} />
         <Navigation
           numberOfPages={meta.total_pages}

@@ -1,10 +1,10 @@
 import Card from "../ui/Card";
-import classes from "./DataTable.module.css"
+import styles from "./DataTable.module.css"
 
 const DataTable = (props) => {
   return (
     <Card>
-      <table className={classes['data-table']}>
+      <table className={styles['data-table']}>
         <thead>{props.head}</thead>
         <tbody>{props.body}</tbody>
       </table>

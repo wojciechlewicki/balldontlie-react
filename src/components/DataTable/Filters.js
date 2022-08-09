@@ -1,4 +1,4 @@
-import classes from "./Filters.module.css";
+import styles from "./Filters.module.css";
 
 import getTodaysDate from "../../utils/getTodaysDate";
 
@@ -50,8 +50,8 @@ const Filters = ({ searchParams, setSearchParams }) => {
   else postSeasonSelectValue = "all_games";
 
   return (
-    <div className={classes.filters}>
-      <div className={classes.postseason}>
+    <div className={styles.filters}>
+      <div className={styles["label-input-container"]}>
         <label htmlFor="postseason-select">Show</label>
         <select
           id="postseason-select"
@@ -63,27 +63,25 @@ const Filters = ({ searchParams, setSearchParams }) => {
           <option value="postseason">Postseason</option>
         </select>
       </div>
-      <div className={classes["date-range"]}>
-        <div>
-          <label htmlFor="start-date">Start date</label>
-          <input
-            type="date"
-            id="start-date"
-            min="1979-01-01"
-            defaultValue={startDate}
-            onChange={handleStartDateChange}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="end-date">End date</label>
-          <input
-            type="date"
-            id="end-date"
-            min="1979-01-01"
-            defaultValue={endDate}
-            onChange={handleEndDateChange}
-          ></input>
-        </div>
+      <div className={styles["label-input-container"]}>
+        <label htmlFor="start-date">Start date</label>
+        <input
+          type="date"
+          id="start-date"
+          min="1979-01-01"
+          defaultValue={startDate}
+          onChange={handleStartDateChange}
+        ></input>
+      </div>
+      <div className={styles["label-input-container"]}>
+        <label htmlFor="end-date">End date</label>
+        <input
+          type="date"
+          id="end-date"
+          min="1979-01-01"
+          defaultValue={endDate}
+          onChange={handleEndDateChange}
+        ></input>
       </div>
     </div>
   );

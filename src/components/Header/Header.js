@@ -3,7 +3,7 @@ import Wrapper from "../ui/Wrapper";
 import { NavLink, useNavigate, createSearchParams } from "react-router-dom";
 
 import {ReactComponent as HamburgerIcon} from "../../assets/hamburger-menu-icon.svg"
-import classes from "./Header.module.css";
+import styles from "./Header.module.css";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -25,12 +25,12 @@ const Header = () => {
   };
 
   return (
-    <header className={classes.header}>
-      <Wrapper className={classes.flexbox}>
-          <NavLink className={classes.logo} to="/">
+    <header className={styles.header}>
+      <Wrapper className={styles.flexbox}>
+          <NavLink className={styles.logo} to="/">
             NBAdata
           </NavLink>
-          <form className={classes["input-div"]} onSubmit={handleSubmit}>
+          <form className={styles["input-div"]} onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Search for players..."
@@ -38,8 +38,8 @@ const Header = () => {
               onChange={handleChange}
             ></input>
           </form>
-            <button className={classes.hamburger} onClick={handleToogleNav}><HamburgerIcon /></button>
-          <nav className={navbarOpen ? classes.show : ""}>
+            <button className={styles.hamburger} onClick={handleToogleNav}><HamburgerIcon /></button>
+          <nav className={navbarOpen ? styles.show : ""}>
             <ul>
               <li>
                 <NavLink to="/players">Players</NavLink>
