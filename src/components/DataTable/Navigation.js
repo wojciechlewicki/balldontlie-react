@@ -12,27 +12,12 @@ const Navigation = ({ numberOfPages, searchParams, setSearchParams }) => {
     ? +searchParams.get("per_page")
     : 20;
   const currentPage = +searchParams.get("page") ? +searchParams.get("page") : 1;
-
-  const handleBack = () => {
-    if (currentPage > 1) {
-      searchParams.set("page", currentPage - 1);
-      setSearchParams(searchParams);
-    }
-  };
-
-  const handleForward = () => {
-    if (currentPage < numberOfPages) {
-      searchParams.set("page", currentPage + 1);
-      setSearchParams(searchParams);
-    }
-  };
-
-  const handlePerPageChange = (event) => {
-    const perPage = event.target.value;
-    searchParams.set("page", 1);
-    searchParams.set("per_page", perPage);
-    setSearchParams(searchParams);
-  };
+  const { handleBack, handleForward, handlePerPageChange } = useNavigation(
+    currentPage,
+    numberOfPages,
+    searchParams,
+    setSearchParams
+  );
 
   return (
     <div className={styles.navigation}>

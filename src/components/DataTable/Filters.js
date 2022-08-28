@@ -2,11 +2,13 @@ import styles from "./Filters.module.css";
 
 import getTodaysDate from "../../utils/getTodaysDate";
 
+const minDate = "1979-01-01"
+
 const Filters = ({ searchParams, setSearchParams }) => {
   const postseason = searchParams.get("postseason");
   const startDate = searchParams.get("start_date")
     ? searchParams.get("start_date")
-    : "1979-01-01";
+    : minDate;
   const endDate = searchParams.get("end_date")
     ? searchParams.get("end_date")
     : getTodaysDate();
@@ -68,7 +70,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
         <input
           type="date"
           id="start-date"
-          min="1979-01-01"
+          min={minDate}
           defaultValue={startDate}
           onChange={handleStartDateChange}
           required
@@ -79,7 +81,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
         <input
           type="date"
           id="end-date"
-          min="1979-01-01"
+          min={minDate}
           defaultValue={endDate}
           onChange={handleEndDateChange}
           required
