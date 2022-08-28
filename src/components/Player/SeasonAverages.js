@@ -5,10 +5,10 @@ import { getSeasonAverages } from "../../services/api";
 
 import generateArrayOfYears from "../../utils/generateArrayOfYears";
 import Card from "../ui/Card";
+import SeasonAveragesSelect from "./SeasonAveragesSelect";
 import styles from "./SeasonAverages.module.css";
 
 const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
-  let content;
   const seasonsArray = generateArrayOfYears(1979);
   const chosenYear = searchParams.get("season")
     ? searchParams.get("season")
@@ -44,122 +44,77 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
   };
 
   if (seasonAverages.length === 0) {
-    content = <p>There's no player statistics for the chosen season.</p>;
-  } else {
-    content = (
+    return (
       <Fragment>
-        <table>
-          <tbody>
-            <tr>
-              <th>Season</th>
-              <td>{seasonAverages[0].season}</td>
-            </tr>
-            <tr>
-              <th>Games played</th>
-              <td>{seasonAverages[0].games_played}</td>
-            </tr>
-            <tr>
-              <th>Points</th>
-              <td>{seasonAverages[0].pts}</td>
-            </tr>
-            <tr>
-              <th>Minutes played</th>
-              <td>{seasonAverages[0].min}</td>
-            </tr>
-            <tr>
-              <th>Offensive Rebounds</th>
-              <td>{seasonAverages[0].oreb}</td>
-            </tr>
-            <tr>
-              <th>Defensive Rebounds</th>
-              <td>{seasonAverages[0].dreb}</td>
-            </tr>
-            <tr>
-              <th>Rebounds</th>
-              <td>{seasonAverages[0].reb}</td>
-            </tr>
-            <tr>
-              <th>Assists</th>
-              <td>{seasonAverages[0].ast}</td>
-            </tr>
-            <tr>
-              <th>Steals</th>
-              <td>{seasonAverages[0].stl}</td>
-            </tr>
-            <tr>
-              <th>Blocks</th>
-              <td>{seasonAverages[0].blk}</td>
-            </tr>
-            <tr>
-              <th>Turnovers</th>
-              <td>{seasonAverages[0].turnover}</td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            <tr>
-              <th>Personal Fauls</th>
-              <td>{seasonAverages[0].pf}</td>
-            </tr>
-            <tr>
-              <th>Field goals made</th>
-              <td>{seasonAverages[0].fgm}</td>
-            </tr>
-            <tr>
-              <th>Field goals attempted</th>
-              <td>{seasonAverages[0].fga}</td>
-            </tr>
-            <tr>
-              <th>Field goal percentage</th>
-              <td>{seasonAverages[0].fg_pct}</td>
-            </tr>
-            <tr>
-              <th>3 Point Field goals made</th>
-              <td>{seasonAverages[0].fg3m}</td>
-            </tr>
-            <tr>
-              <th>3 Point Field goals attempted</th>
-              <td>{seasonAverages[0].fg3a}</td>
-            </tr>
-            <tr>
-              <th>3 Point Field goals percentage</th>
-              <td>{seasonAverages[0].fg3_pct}</td>
-            </tr>
-            <tr>
-              <th>Free Throws Made</th>
-              <td>{seasonAverages[0].ftm}</td>
-            </tr>
-            <tr>
-              <th>Free Throws Attempted</th>
-              <td>{seasonAverages[0].fta}</td>
-            </tr>
-            <tr>
-              <th>Free throw percentage</th>
-              <td>{seasonAverages[0].ft_pct}</td>
-            </tr>
-          </tbody>
-        </table>
+        <SeasonAveragesSelect
+          onChange={handleSelectYear}
+          defaultValue={chosenYear}
+          options={selectOptions}
+        />
+        <Card>
+          <p>There's no player statistics for the chosen season.</p>
+        </Card>
       </Fragment>
     );
   }
 
+  const seasonAveragesData = seasonAverages[0];
+  const leftSideRows = [
+    { name: "Season", data: seasonAveragesData.season },
+    { name: "Games played", data: seasonAveragesData.games_played },
+    { name: "Minutes played", data: seasonAveragesData.min },
+    { name: "Offensive Rebounds", data: seasonAveragesData.oreb },
+    { name: "Defensive Rebounds", data: seasonAveragesData.dreb },
+    { name: "Rebounds", data: seasonAveragesData.reb },
+    { name: "Assists", data: seasonAveragesData.ast },
+    { name: "Steals", data: seasonAveragesData.stl },
+    { name: "Blocks", data: seasonAveragesData.blk },
+    { name: "Turnovers", data: seasonAveragesData.turnover },
+  ];
+  const leftSideTableBody = leftSideRows.map((row) => {
+    return (
+      <tr>
+        <th>{row.name}</th>
+        <td>{row.data}</td>
+      </tr>
+    );
+  });
+
+  const rightSideRows = [
+    { name: "Personal Fauls", data: seasonAveragesData.pf },
+    { name: "Field goals made", data: seasonAveragesData.fgm },
+    { name: "Field goals attempted", data: seasonAveragesData.fga },
+    { name: "Field goal percentage", data: seasonAveragesData.fg_pct },
+    { name: "3 Point Field goals made", data: seasonAveragesData.fg3m },
+    { name: "3 Point Field goals attempted", data: seasonAveragesData.fg3a },
+    { name: "Free Throws Made", data: seasonAveragesData.ftm },
+    { name: "Free Throws Attempted", data: seasonAveragesData.fta },
+    { name: "Free throw percentage", data: seasonAveragesData.ft_pct },
+  ];
+  const rightSideTableBody = rightSideRows.map((row) => {
+    return (
+      <tr>
+        <th>{row.name}</th>
+        <td>{row.data}</td>
+      </tr>
+    );
+  });
+
   return (
     <Fragment>
-      <div className="flexbox-row-space-around">
-        <p>Season averages</p>
-        <div className={styles['season-select']}>
-          <label htmlFor="season-select">Select season</label>
-          <select
-            id="season-select"
-            onChange={handleSelectYear}
-            defaultValue={chosenYear}
-          >
-            {selectOptions}
-          </select>
-        </div>
-      </div>
-      <Card className={styles["season-averages"]}>{content}</Card>
+      <SeasonAveragesSelect
+        onChange={handleSelectYear}
+        defaultValue={chosenYear}
+        options={selectOptions}
+      />
+      <Card className={styles["season-averages"]}>
+        <table>
+          <tbody>{leftSideTableBody}</tbody>
+        </table>
+        <table>
+          <tbody>{rightSideTableBody}</tbody>
+        </table>
+      </Card>
     </Fragment>
   );
 };

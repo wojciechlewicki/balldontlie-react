@@ -20,15 +20,6 @@
   text-align: left;
 }
 
-.season-select {
-  display: flex;
-  align-items: center;
-}
-
-.season-select label {
-  padding-right: 0.5em;
-}
-
 @media(max-width: 768px) {
   .season-averages {
     flex-direction: column;
