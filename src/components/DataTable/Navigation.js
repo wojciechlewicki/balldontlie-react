@@ -1,7 +1,11 @@
+import useNavigation from "../../hooks/useNavigation";
+
 import styles from "./Navigation.module.css";
 
 import { ReactComponent as ArrowBack } from "../../assets/arrow_back.svg";
 import { ReactComponent as ArrowForward } from "../../assets/arrow_forward.svg";
+
+const perPageAmounts = [20, 30, 50, 80, 100];
 
 const Navigation = ({ numberOfPages, searchParams, setSearchParams }) => {
   const perPage = +searchParams.get("per_page")
@@ -35,11 +39,9 @@ const Navigation = ({ numberOfPages, searchParams, setSearchParams }) => {
       <div className="flexbox-row-center">
         <label htmlFor="per_page">Rows per page</label>
         <select name="per_page" value={perPage} onChange={handlePerPageChange}>
-          <option value="20">20</option>
-          <option value="30">30</option>
-          <option value="50">50</option>
-          <option value="80">80</option>
-          <option value="100">100</option>
+          {perPageAmounts.map((perPage) => {
+            return <option value={perPage}>{perPage}</option>;
+          })}
         </select>
       </div>
       <div className="flexbox-row-center">
