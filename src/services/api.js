@@ -54,13 +54,12 @@ export async function getAllGames(page = 1, perPage = 20, params = {}) {
   for (const key in params) {
     const value = params[key];
     console.log(key, value);
-
     if (value) {
       urlParams.set(key, value);
     }
   }
   const data = await fetchData(
-    `${BASE_URL}/games?page=${page}&per_page=${perPage}${urlParams.toString()}`
+    `${BASE_URL}/games?page=${page}&per_page=${perPage}${urlParams ? '&' + urlParams.toString() : ""}`
   );
   return { games: data.data, meta: data.meta };
 }
