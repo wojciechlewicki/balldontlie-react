@@ -44,15 +44,15 @@ const BasicData = ({ playerData }) => {
   });
 
   return (
-    <Card className={styles["basic-data__card"]}>
-      <div className={styles["basic-data__data"]}>
+    <Card className={styles.basicDataCard}>
+      <div className={styles.basicData}>
         <h2>{playerData.first_name}</h2>
         <h2 className={styles.headers}>{playerData.last_name}</h2>
         <table>
           <tbody>{leftSideTableBody}</tbody>
         </table>
       </div>
-      <div className={styles["basic-data__data"]}>
+      <div className={styles.basicData}>
         <h2 className={styles.headers}>Team</h2>
         <table>
           <tbody>{rightSideTableBody}</tbody>

@@ -4,7 +4,7 @@ import Wrapper from "../ui/Wrapper";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Wrapper className={styles.flexbox}>
+      <Wrapper className={styles.flexboxCenter}>
         <p>Copyright 2022 Wojciech Lewicki</p>
       </Wrapper>
     </footer>

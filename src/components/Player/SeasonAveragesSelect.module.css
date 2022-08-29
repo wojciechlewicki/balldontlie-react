@@ -1,8 +1,8 @@
-.season-select {
+.seasonSelect {
   display: flex;
   align-items: center;
 }
 
-.season-select label {
+.seasonSelect label {
   padding-right: 0.5em;
 }

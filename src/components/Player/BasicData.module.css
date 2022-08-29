@@ -1,26 +1,26 @@
-.basic-data__card {
+.basicDataCard {
   display: flex;
   align-items: center;
   font-size: 1.25rem;
   line-height: 200%;
 }
 
-.basic-data__card th {
+.basicDataCard th {
   text-align: left;
   padding-right: 2em;
 }
 
-.basic-data__card table {
+.basicDataCard table {
   border-collapse: collapse;
 }
 
-.basic-data__card tr {
+.basicDataCard tr {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid white;
 }
 
-.basic-data__data {
+.basicData {
   display: flex;
   flex-direction: column;
   margin-right: 1em;
@@ -32,11 +32,11 @@
 }
 
 @media (max-width: 650px) {
-  .basic-data__card {
+  .basicDataCard {
     flex-direction: column;
   }
 
-  .basic-data__data {
+  .basicData {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

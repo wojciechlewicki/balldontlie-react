@@ -19,11 +19,11 @@
 }
 
 .header li,
-.header .input-div {
+.inputForm {
   margin-left: 2.5em;
 }
 
-.header .input-div {
+.inputForm {
   display: flex;
   height: 2.5rem;
   width: 40%;
@@ -33,7 +33,7 @@
   font-weight: 500;
 }
 
-.input-div input {
+.inputForm input {
   width: 100%;
 }
 
@@ -93,7 +93,7 @@
     display: block;
   }
 
-  .header .input-div {
+  .inputForm {
     margin-left: 0;
     width: 50%;
   }

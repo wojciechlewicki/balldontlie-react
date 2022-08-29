@@ -53,7 +53,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
 
   return (
     <div className={styles.filters}>
-      <div className={styles["label-input-container"]}>
+      <div className={styles.labelInputContainer}>
         <label htmlFor="postseason-select">Show</label>
         <select
           id="postseason-select"
@@ -65,7 +65,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
           <option value="postseason">Postseason</option>
         </select>
       </div>
-      <div className={styles["label-input-container"]}>
+      <div className={styles.labelInputContainer}>
         <label htmlFor="start-date">Start date</label>
         <input
           type="date"
@@ -76,7 +76,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
           required
         />
       </div>
-      <div className={styles["label-input-container"]}>
+      <div className={styles.labelInputContainer}>
         <label htmlFor="end-date">End date</label>
         <input
           type="date"

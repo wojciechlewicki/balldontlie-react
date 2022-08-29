@@ -30,7 +30,7 @@ const Header = () => {
           <NavLink className={styles.logo} to="/">
             NBAdata
           </NavLink>
-          <form className={styles["input-div"]} onSubmit={handleSubmit}>
+          <form className={styles.inputForm} onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Search for players..."

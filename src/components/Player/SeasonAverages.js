@@ -109,7 +109,7 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
         defaultValue={chosenYear}
         options={selectOptions}
       />
-      <Card className={styles["season-averages"]}>
+      <Card className={styles.seasonAverages}>
         <table>
           <tbody>{leftSideTableBody}</tbody>
         </table>

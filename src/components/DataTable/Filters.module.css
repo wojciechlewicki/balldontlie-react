@@ -6,8 +6,8 @@
   margin-bottom: 1.5em;
 }
 
-.label-input-container select,
-.label-input-container input {
+.labelInputContainer select,
+.labelInputContainer input {
   margin-left: 0.5em;
   margin-bottom: 1em;
   padding: 0.2em;

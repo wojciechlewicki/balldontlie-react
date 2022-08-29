@@ -11,7 +11,7 @@
   object-fit: cover;
 }
 
-.main--h1 {
+.h1Home {
   position: relative;
   display: flex;
   flex-direction: column;

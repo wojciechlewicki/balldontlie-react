@@ -4,7 +4,7 @@
   background-color: var(--secondary-color);
 }
 
-.flexbox {
+.flexboxCenter {
   display: flex;
   height: 100%;
   align-items: center;
