@@ -8,8 +8,10 @@ import Card from "../ui/Card";
 import SeasonAveragesSelect from "./SeasonAveragesSelect";
 import styles from "./SeasonAverages.module.css";
 
+const startingYear = 1979;
+const seasonsArray = generateArrayOfYears(startingYear);
+
 const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
-  const seasonsArray = generateArrayOfYears(1979);
   const chosenYear = searchParams.get("season")
     ? searchParams.get("season")
     : seasonsArray[0];
