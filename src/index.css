@@ -1,10 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 
+#root {
+  --primary-color: #1d418b;
+  --secondary-color: #142d61;
+  --logo-red: #ee1b3f;
+  --font-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  font-family: "Mulish", sans-serif;
+}
+
 * {
   text-decoration: none;
   list-style: none;
-  color: white;
+  color: var(--font-color);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,17 +26,6 @@ html,
 body,
 #root {
   min-height: 100vh;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-body {
-  background-color: #1d418b;
-  font-family: "Mulish", sans-serif;
 }
 
 input,
@@ -91,7 +92,7 @@ h2 {
   :root {
     font-size: 15px;
   }
-  
+
   h1 {
     font-size: 2rem;
   }
