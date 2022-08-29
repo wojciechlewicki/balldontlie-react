@@ -30,8 +30,9 @@ const Header = () => {
           <NavLink className={styles.logo} to="/">
             NBAdata
           </NavLink>
-          <form className={styles.inputForm} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             <input
+              className={styles.formInput}
               type="text"
               placeholder="Search for players..."
               value={search}
@@ -39,15 +40,15 @@ const Header = () => {
             ></input>
           </form>
             <button className={styles.hamburger} onClick={handleToogleNav}><HamburgerIcon /></button>
-          <nav className={navbarOpen ? styles.show : ""}>
-            <ul>
-              <li>
+          <nav className={`${styles.headerNav} ${navbarOpen ? styles.show : ""}`}>
+            <ul className={styles.headerNavUl}>
+              <li className={styles.headerNavLi}>
                 <NavLink to="/players" onClick={handleToogleNav}>Players</NavLink>
               </li>
-              <li>
+              <li className={styles.headerNavLi}>
                 <NavLink to="/teams" onClick={handleToogleNav}>Teams</NavLink>
               </li>
-              <li>
+              <li className={styles.headerNavLi}>
                 <NavLink to="/games" onClick={handleToogleNav}>Games</NavLink>
               </li>
             </ul>

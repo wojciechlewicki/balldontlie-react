@@ -6,20 +6,17 @@
   height: 35px;
 }
 
-.navigation select
-.navigation option,
-.navigation button,
-.navigation input {
+.navigationElement {
   width: 50px;
   height: 30px;
 }
 
-.navigation select {
+.navigationSelect {
   margin-left: 10px;
   height: 80%;
 }
 
-.navigation button {
+.navigationButton {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -5,9 +5,8 @@ import useFetch from "../hooks/useFetch";
 import { getAllPlayers } from "../services/api";
 
 import Wrapper from "../components/ui/Wrapper";
-import DataTable from "../components/DataTable/DataTable";
 import Navigation from "../components/DataTable/Navigation";
-import LinkButton from "../components/ui/LinkButton"
+import PlayersList from "../components/Players/PlayersList";
 
 const Players = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -36,41 +35,12 @@ const Players = () => {
   }
   const { players, meta } = playersList;
 
-  const tableHeader = (
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Pos.</th>
-      <th>Height</th>
-      <th>Weight(Lb)</th>
-      <th>Team</th>
-      <th>Details</th>
-    </tr>
-  );
-
-  const playersRows = players.map((player) => {
-    return (
-      <tr key={player.id}>
-        <td>{player.first_name}</td>
-        <td>{player.last_name}</td>
-        <td>{player.position ? `${player.position}'` : "unk"}</td>
-        <td>
-          {player.height_feet ? `${player.height_feet}'` : "unk"}
-          {player.height_inches === null ? "" : ` ${player.height_inches}''`}
-        </td>
-        <td>{player.weight_pounds ? player.weight_pounds : "unk"}</td>
-        <td>{player.team.abbreviation}</td>
-        <td><LinkButton to={`/players/${player.id}`}>Show</LinkButton></td>
-      </tr>
-    );
-  });
-
   return (
     <div className="outer-wrapper">
       <Wrapper>
         <h1>Players</h1>
         <h2>{meta.total_count} player(s) found</h2>
-        <DataTable head={tableHeader} body={playersRows} />
+        <PlayersList players={players}/>
         <Navigation
           numberOfPages={meta.total_pages}
           searchParams={searchParams}

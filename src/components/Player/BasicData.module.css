@@ -5,13 +5,13 @@
   line-height: 200%;
 }
 
+.basicDataCardTable {
+  border-collapse: collapse;
+}
+
 .basicDataCard th {
   text-align: left;
   padding-right: 2em;
-}
-
-.basicDataCard table {
-  border-collapse: collapse;
 }
 
 .basicDataCard tr {

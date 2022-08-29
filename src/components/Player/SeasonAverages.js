@@ -75,8 +75,8 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
   ];
   const leftSideTableBody = leftSideRows.map((row) => {
     return (
-      <tr>
-        <th>{row.name}</th>
+      <tr className={styles.seasonAveragesTr}>
+        <th className={styles.seasonAveragesTh}>{row.name}</th>
         <td>{row.data}</td>
       </tr>
     );
@@ -95,8 +95,8 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
   ];
   const rightSideTableBody = rightSideRows.map((row) => {
     return (
-      <tr>
-        <th>{row.name}</th>
+      <tr className={styles.seasonAveragesTr}>
+        <th className={styles.seasonAveragesTh}>{row.name}</th>
         <td>{row.data}</td>
       </tr>
     );
@@ -110,10 +110,10 @@ const SeasonAverages = ({ searchParams, setSearchParams, playerId }) => {
         options={selectOptions}
       />
       <Card className={styles.seasonAverages}>
-        <table>
+        <table className={styles.seasonAveragesTable}>
           <tbody>{leftSideTableBody}</tbody>
         </table>
-        <table>
+        <table className={styles.seasonAveragesTable}>
           <tbody>{rightSideTableBody}</tbody>
         </table>
       </Card>

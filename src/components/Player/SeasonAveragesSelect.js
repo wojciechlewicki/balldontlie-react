@@ -5,7 +5,7 @@ const SeasonAveragesSelect = ({ onChange, defaultValue, options }) => {
     <div className="flexbox-row-space-around">
       <p>Season averages</p>
       <div className={styles.seasonSelect}>
-        <label htmlFor="season-select">Select season</label>
+        <label className={styles.seasonSelectLabel} htmlFor="season-select">Select season</label>
         <select
           id="season-select"
           onChange={onChange}

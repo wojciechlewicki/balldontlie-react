@@ -48,13 +48,13 @@ const BasicData = ({ playerData }) => {
       <div className={styles.basicData}>
         <h2>{playerData.first_name}</h2>
         <h2 className={styles.headers}>{playerData.last_name}</h2>
-        <table>
+        <table className={styles.basicDataCardTable}>
           <tbody>{leftSideTableBody}</tbody>
         </table>
       </div>
       <div className={styles.basicData}>
         <h2 className={styles.headers}>Team</h2>
-        <table>
+        <table className={styles.basicDataCardTable}>
           <tbody>{rightSideTableBody}</tbody>
         </table>
       </div>
