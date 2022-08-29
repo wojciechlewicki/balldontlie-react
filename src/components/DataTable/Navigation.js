@@ -23,9 +23,18 @@ const Navigation = ({ numberOfPages, searchParams, setSearchParams }) => {
     <div className={styles.navigation}>
       <div className="flexbox-row-center">
         <label htmlFor="per_page">Rows per page</label>
-        <select name="per_page" value={perPage} onChange={handlePerPageChange}>
+        <select
+          className={`${styles.navigationElement} ${styles.navigationSelect}`}
+          name="per_page"
+          value={perPage}
+          onChange={handlePerPageChange}
+        >
           {perPageAmounts.map((perPage) => {
-            return <option value={perPage}>{perPage}</option>;
+            return (
+              <option key={perPage} className={styles.navigationElement} value={perPage}>
+                {perPage}
+              </option>
+            );
           })}
         </select>
       </div>
@@ -34,10 +43,16 @@ const Navigation = ({ numberOfPages, searchParams, setSearchParams }) => {
         <div>/{numberOfPages ? numberOfPages : "1"}</div>
       </div>
       <div className="flexbox-row-center">
-        <button onClick={handleBack}>
+        <button
+          className={`${styles.navigationElement} ${styles.navigationButton}`}
+          onClick={handleBack}
+        >
           <ArrowBack />
         </button>
-        <button onClick={handleForward}>
+        <button
+          className={`${styles.navigationElement} ${styles.navigationButton}`}
+          onClick={handleForward}
+        >
           <ArrowForward />
         </button>
       </div>

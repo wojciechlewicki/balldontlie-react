@@ -2,7 +2,7 @@ import styles from "./Filters.module.css";
 
 import getTodaysDate from "../../utils/getTodaysDate";
 
-const minDate = "1979-01-01"
+const minDate = "1979-01-01";
 
 const Filters = ({ searchParams, setSearchParams }) => {
   const postseason = searchParams.get("postseason");
@@ -53,9 +53,10 @@ const Filters = ({ searchParams, setSearchParams }) => {
 
   return (
     <div className={styles.filters}>
-      <div className={styles["label-input-container"]}>
+      <div>
         <label htmlFor="postseason-select">Show</label>
         <select
+          className={styles.inputStyle}
           id="postseason-select"
           onChange={handlePostseasonChange}
           defaultValue={postSeasonSelectValue}
@@ -65,9 +66,10 @@ const Filters = ({ searchParams, setSearchParams }) => {
           <option value="postseason">Postseason</option>
         </select>
       </div>
-      <div className={styles["label-input-container"]}>
+      <div>
         <label htmlFor="start-date">Start date</label>
         <input
+          className={styles.inputStyle}
           type="date"
           id="start-date"
           min={minDate}
@@ -76,7 +78,7 @@ const Filters = ({ searchParams, setSearchParams }) => {
           required
         />
       </div>
-      <div className={styles["label-input-container"]}>
+      <div className={styles.labelInputContainer}>
         <label htmlFor="end-date">End date</label>
         <input
           type="date"

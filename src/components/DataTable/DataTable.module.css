@@ -1,20 +1,20 @@
-.data-table {
+.dataTable {
   width: 100%;
   border-collapse: collapse;
 }
 
-.data-table th {
+.dataTable th {
   text-align: left;
   line-height: 250%;
 }
 
-.data-table tr {
+.dataTable tr {
   border-bottom: 1px solid white;
   line-height: 220%;
 }
 
 @media (max-width: 768px) {
-  .data-table {
+  .dataTable {
     font-size: 0.75rem;
   }
 }
