@@ -53,7 +53,6 @@ export async function getAllGames(page = 1, perPage = 20, params = {}) {
   let urlParams = new URLSearchParams("");
   for (const key in params) {
     const value = params[key];
-    console.log(key, value);
     if (value) {
       urlParams.set(key, value);
     }

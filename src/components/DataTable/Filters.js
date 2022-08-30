@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import styles from "./Filters.module.css";
 
 import getTodaysDate from "../../utils/getTodaysDate";
@@ -46,10 +48,21 @@ const Filters = ({ searchParams, setSearchParams }) => {
     }
   };
 
-  let postSeasonSelectValue;
-  if (postseason === "false") postSeasonSelectValue = "season";
-  else if (postseason === "true") postSeasonSelectValue = "postseason";
-  else postSeasonSelectValue = "all_games";
+  const postSeasonSelectValue = useMemo(() => {
+    if (postseason === null) {
+      return "all_games";
+    }
+
+    const postSeasonBool = postseason === "true";
+
+    if (!postSeasonBool) {
+      return "season";
+    }
+
+    if (postSeasonBool) {
+      return "postseason";
+    }
+  }, [postseason]);
 
   return (
     <div className={styles.filters}>

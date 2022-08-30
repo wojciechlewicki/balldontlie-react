@@ -12,7 +12,6 @@ const Player = () => {
   const { playerId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
 
-
   const {
     sendRequest: sendPlayerDataRequest,
     data: playerData,
